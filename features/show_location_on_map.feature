@@ -20,3 +20,10 @@ Scenario: a vítima tenta acessar uma instituição com endereço não encontrad
 	When eu clico em uma das instituições
 	And a instituição não possui endereço encontrado no maps
 	Then o sistema retornma a mensagem "endereço não encontrado"
+
+Scenario: a vítima olha para o mapa e usa a ferramenta de zoom para se situar melhor
+
+	Given Eu, uma vítima, terminei de fazer a triagem
+	When Eu clico numa das opções de instituições
+	Then Aparece na tela um mini mapa com a localização da instituição
+	And eu posso clicar na ferramenta de zoom para dar zoom-in ou zoom-out no mapa
