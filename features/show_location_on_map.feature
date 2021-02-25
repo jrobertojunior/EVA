@@ -19,4 +19,4 @@ Scenario: a vítima tenta acessar uma instituição com endereço não encontrad
 	Given, eu, uma vítima utilizando o sistema
 	When eu clico em uma das instituições
 	And a instituição não possui endereço encontrado no maps
-	Then o sistema retornma a mensagem "endereço não encontrado"
+	Then o sistema retornma a mensagem "endereço da instituição não encontrado"
