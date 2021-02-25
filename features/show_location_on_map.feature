@@ -12,5 +12,11 @@ Scenario: a vítima tenta ver a instituição no mapa, mas sua internet é lenta
 	Given Eu, uma vítima utilizando o sistema
 	When Eu clico em uma das instituições
 	And O mapa não carrega por falta de internet
-	Then o sistema retorna uma mensagem alerta "falta de internet"
+	Then o sistema retorna a mensagem "falta de internet"
 
+Scenario: a vítima tenta acessar uma instituição com endereço não encontrado
+
+	Given, eu, uma vítima utilizando o sistema
+	When eu clico em uma das instituições
+	And a instituição não possui endereço encontrado no maps
+	Then o sistema retornma a mensagem "endereço não encontrado"
