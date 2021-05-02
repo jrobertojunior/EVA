@@ -7,12 +7,17 @@ Scenario: a vítima acabou de fazer a triagem e recebe uma lista de recomendaç�
 	Then Aparece na tela um mini mapa com a localização da instituição
 	And eu posso clicar no mapa e ser levado a um link externo do Google Maps
 
-Scenario: a vítima tenta ver a instituição no mapa, mas sua internet é lenta
+Scenario: a vítima consegue ver o mapa com sua instituição
 
 	Given Eu, uma vítima utilizando o sistema
 	When Eu clico em uma das instituições
-	And O mapa não carrega por falta de internet
-	Then o sistema retorna a mensagem "falta de internet"
+	Then é carregada uma página com o mapa mostrando a instituição
+	
+Scenario: a vítima vê o telefone da instituição em baixo do mapa
+	
+	Given Eu, uma vítima utilizando o sistema
+	When Eu clico em uma das intituições
+	Then é carregada uma página com o telefone da instituição
 
 Scenario: a vítima tenta acessar uma instituição com endereço não encontrado
 
